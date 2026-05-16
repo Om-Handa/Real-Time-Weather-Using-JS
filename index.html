@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="navbar">
+            <div class="searchbar">
+                <input type="text" class="input" placeholder="Search for your City"></input>
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass search"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+
+        <!-- WEATHER CARD -->
+        <div class="weather-card">
+            <div class="city "></div>
+            <div class="card-grid">
+                <div class="grid">
+                    <div class="temp "></div>
+                    <div class="description "></div>
+                </div>
+
+                <div class="grid2 ">
+                    <div class="min-max">
+                        <div class="common2"><p>Min: </p><p class="max"></p></div>
+                        <div class="common2"><p>Max: </p><p class="min"></p></div>
+                    </div>
+                    <div class="common2 preci"><p>Precipitation</p><p class="rain"></p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD2 (EXTRA DETAILS) -->
+        <div class="extra">
+
+            <div class="card-details">
+                <div class="card">
+                    <p class="card-headings">Weather Details</p>
+                    <div class="card2" >
+                        <div class="common"><p>Humidity</p><p class="humidity"></p></div>
+                        <div class="common"><p>Wind</p><p class="windspeed"></p></div>
+                        <div class="common"><p>UV index</p><p class="UV"></p></div>
+                        <div class="common"><p>Pressure</p><p class="pressure"></p></div>
+                        <div class="common"><p>Sunrise</p><p class="sunrise"></p></div>
+                        <div class="common"><p>Sunset</p><p class="sunset"></p></div>
+                    </div>
+                </div>
+
+                <!--TOMORROWS WEATHER  -->
+                <div class="tomorrow bg">
+                    <p class="card-headings">3-Day Weather Forecast</p>
+                    <canvas id="forecastCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="graph">
+            <p>Hourly Weather</p>
+            <div class="hourly-canvas">
+                <canvas id="hourly"></canvas>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="graph.js"></script>
+    <script type="module" src="hourly-graph.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="config.js"></script>
+</body>
+
+</html>
